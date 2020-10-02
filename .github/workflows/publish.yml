@@ -1,11 +1,7 @@
 name: Publish NPM
 
 on:
-  workflow_dispatch:
-    inputs:
-      newVersion:
-        description: 'New Package Version (eg. 0.11.0)'
-        required: true
+  push:
 
 jobs:
   publish:
@@ -13,4 +9,4 @@ jobs:
 
     steps:
     - name: Echo
-      run: Echo ${{ github.event.inputs.newVersion  }}
+      run: echo "asds"
