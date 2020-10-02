@@ -1,0 +1,16 @@
+name: Publish NPM
+
+on:
+  workflow_dispatch:
+    inputs:
+      newVersion:
+        description: 'New Package Version (eg. 0.11.0)'
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo
+      run: Echo ${{ github.event.inputs.newVersion  }}
