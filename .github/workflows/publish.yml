@@ -14,3 +14,5 @@ jobs:
     steps:
     - name: Echo
       run: Echo ${{ github.event.inputs.newVersion  }}
+    - name: Echo2 
+      run: Echo second
