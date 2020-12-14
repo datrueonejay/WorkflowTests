@@ -15,9 +15,9 @@ jobs:
       run: echo ${{ env.TEST }}
     
     - name: Conditional env variable
-      if: env.TEST == testenv
+      if: env.TEST == 'testenv'
       run: echo this should run
     
     - name: Condition 2
-      if: env.TEST != testenv
+      if: env.TEST != 'testenv'
       run: echo This should not run
