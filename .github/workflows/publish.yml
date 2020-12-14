@@ -8,5 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Echo
-      run: echo "asds"
+    - name: Set env variable
+      run: echo "TEST=testenv" >> $GITHUB_ENV
+    
+    - name: Echo env variable
+      run: echo ${{ env.TEST }}
+    
+    - name: Conditional env variable
+      if: env.TEST == testenv
+      run: echo this should run
+    
+    - name: Condition 2
+      if: env.TEST != testenv
+      run: echo This should not run
